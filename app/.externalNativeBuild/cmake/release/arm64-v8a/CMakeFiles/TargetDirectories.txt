@@ -1,0 +1,3 @@
+/Users/evgenijefanov/Desktop/remote/age-detection-tf-master-blank/app/.externalNativeBuild/cmake/release/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/evgenijefanov/Desktop/remote/age-detection-tf-master-blank/app/.externalNativeBuild/cmake/release/arm64-v8a/CMakeFiles/rebuild_cache.dir
+/Users/evgenijefanov/Desktop/remote/age-detection-tf-master-blank/app/.externalNativeBuild/cmake/release/arm64-v8a/CMakeFiles/native-lib.dir

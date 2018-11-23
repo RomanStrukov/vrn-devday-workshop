@@ -1,0 +1,15 @@
+Executable : /Users/evgenijefanov/Library/Android/sdk/cmake/3.6.4111459/bin/cmake
+arguments : 
+-H/Users/evgenijefanov/Desktop/remote/age-detection-tf-master-blank/app
+-B/Users/evgenijefanov/Desktop/remote/age-detection-tf-master-blank/app/.externalNativeBuild/cmake/release/x86
+-DANDROID_ABI=x86
+-DANDROID_PLATFORM=android-23
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/Users/evgenijefanov/Desktop/remote/age-detection-tf-master-blank/app/build/intermediates/cmake/release/obj/x86
+-DCMAKE_BUILD_TYPE=Release
+-DANDROID_NDK=/Users/evgenijefanov/Library/Android/sdk/ndk-bundle
+-DCMAKE_CXX_FLAGS=-std=c++11
+-DCMAKE_TOOLCHAIN_FILE=/Users/evgenijefanov/Library/Android/sdk/ndk-bundle/build/cmake/android.toolchain.cmake
+-DCMAKE_MAKE_PROGRAM=/Users/evgenijefanov/Library/Android/sdk/cmake/3.6.4111459/bin/ninja
+-GAndroid Gradle - Ninja
+jvmArgs : 
+

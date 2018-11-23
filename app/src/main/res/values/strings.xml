@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">HumanRec</string>
+    <string name="distance_low"><font fgcolor='#FF4CD964'>Very close</font></string>
+    <string name="permissions_error">Permissions denied. App can`t run without them.</string>
+    <string name="face_not_found">No face found</string>
+    <string name="no_information">No information</string>
+</resources>

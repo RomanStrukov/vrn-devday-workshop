@@ -1,0 +1,16 @@
+{
+  "buildFiles": [
+    "/Users/evgenijefanov/Desktop/remote/age-detection-tf-master-blank/app/CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "/Users/evgenijefanov/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/evgenijefanov/Desktop/remote/age-detection-tf-master-blank/app/.externalNativeBuild/cmake/release/x86 --target clean"
+  ],
+  "libraries": {
+    "native-lib-Release-x86": {
+      "artifactName": "native-lib",
+      "buildCommand": "/Users/evgenijefanov/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/evgenijefanov/Desktop/remote/age-detection-tf-master-blank/app/.externalNativeBuild/cmake/release/x86 --target native-lib",
+      "abi": "x86",
+      "output": "/Users/evgenijefanov/Desktop/remote/age-detection-tf-master-blank/app/build/intermediates/cmake/release/obj/x86/libnative-lib.so"
+    }
+  }
+}

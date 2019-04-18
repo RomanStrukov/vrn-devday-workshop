@@ -76,6 +76,7 @@ class FaceDetector: IFaceDetector {
 
         // TODO
         // run face cascade to find faces on camera frame
+        faceCascade!!.detectMultiScale(inputMat, faces)
     }
 
     override fun detectDistance(): Double {

@@ -119,17 +119,19 @@ class OpenCVActivity : AppCompatActivity(), CameraBridgeViewBase.CvCameraViewLis
         faceProcessing.feed(rgbaMat!!)
 
         // draw raw opencv rgba mat in the camera preview
+
         return rgbaMat
+        //return faceProcessing.rgbaResizedMat()
     }
 
     @SuppressLint("SetTextI18n")
     private fun logResults() {
         runOnUiThread {
-            stateViewForFrameRate.text = "frameRate: " + faceProcessing.frameRate()
+            stateViewForFrameRate.text = "Frame rate: " + faceProcessing.frameRate()
             if (facesDetected) {
-                val state = age?.label.toString() + "\ngender: " + gender.label
+                val state = age?.label.toString() + "\nGender: " + gender.label
 
-                val distanceState =  "distance (m): ${when (distance) {
+                val distanceState =  "Distance (m): ${when (distance) {
                     in 1..2 -> "Very close"
                     in 2..6 -> "Normal"
                     in 6..100 -> "Far"

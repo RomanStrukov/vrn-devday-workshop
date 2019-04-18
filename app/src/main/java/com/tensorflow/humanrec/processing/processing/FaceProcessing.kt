@@ -2,6 +2,9 @@ package com.tensorflow.humanrec.processing.processing
 
 import com.tensorflow.humanrec.utility.i
 import org.opencv.core.Mat
+import org.opencv.core.Core
+import org.opencv.imgproc.Imgproc
+import org.opencv.core.Size
 
 class FaceProcessing: IFaceProcessing {
     // mat to store rotated image
@@ -30,6 +33,9 @@ class FaceProcessing: IFaceProcessing {
                     // detect current frame rate
                     logFrameTime()
 
+                    //steps = ArrayList()
+                    rgbaRotatedMat = Mat()
+                    rgbaResizedMat = Mat()
                     // pre process image
                     rotate()
                     resize()
@@ -54,6 +60,8 @@ class FaceProcessing: IFaceProcessing {
 
         // TODO
         // rotate input rgbaMat and store result to rgbaRotatedMat
+        Core.rotate(rgbaMat, rgbaRotatedMat, Core.ROTATE_90_CLOCKWISE);
+
     }
 
     override fun resize() {
@@ -64,6 +72,9 @@ class FaceProcessing: IFaceProcessing {
 
         // TODO
         // reduce input rgbaRotatedMat and store result to rgbaResizedMat
+        var sizeTmp = Size((rgbaMat!!.height() / 2).toDouble(), (rgbaMat!!.height() / 2).toDouble())
+        Imgproc.resize(rgbaRotatedMat, rgbaResizedMat, sizeTmp)
+        //rgbaResizedMat = rgbaRotatedMat
     }
 
     // region Not interesting

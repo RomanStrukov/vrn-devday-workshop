@@ -3,16 +3,18 @@
 package com.tensorflow.humanrec.processing.face
 
 import android.content.Context
+import android.support.constraint.solver.widgets.Rectangle
 import org.opencv.core.CvType
 import org.opencv.core.Mat
 import org.opencv.core.MatOfRect
 import org.opencv.core.Rect
+import org.opencv.imgproc.Imgproc
 import org.opencv.objdetect.CascadeClassifier
 import java.io.File
 
 class FaceDetector: IFaceDetector {
     // output of CascadeClassifier
-    private var faces: MatOfRect? = null
+    public var faces: MatOfRect? = null
 
     // CascadeClassifier instance
     private var faceCascade: CascadeClassifier? = null
@@ -76,13 +78,19 @@ class FaceDetector: IFaceDetector {
 
         // TODO
         // run face cascade to find faces on camera frame
-        faceCascade!!.detectMultiScale(inputMat, faces)
+        var grayScale = Mat()
+        Imgproc.cvtColor(inputMat, grayScale, Imgproc.COLOR_BGRA2GRAY);
+        faceCascade!!.detectMultiScale(grayScale, faces)
     }
 
     override fun detectDistance(): Double {
         // TODO
-
-        return 0.0
+        var currentFace = faces!!.toList()[0]
+        var distancei = (2 * 3.14 * 180) / (12 + 11 )
+        var distance = distancei * 2.54
+        distance = Math.floor(distance)
+        return distance
+        //return 0.0;
     }
 
     override fun processFaces(): Boolean {
@@ -91,6 +99,8 @@ class FaceDetector: IFaceDetector {
         if (facesDetected) {
             // TODO
             // process image to feed to tensor
+            //facesBuffer = faces.
+           return true;
         }
 
         return facesDetected

@@ -23,6 +23,7 @@ import com.tensorflow.humanrec.utility.permissions.PermissionsCallback
 import com.tensorflow.humanrec.utility.permissions.PermissionsHelper
 import org.opencv.android.OpenCVLoader
 import org.opencv.core.*
+import org.opencv.imgproc.Imgproc
 
 class OpenCVActivity : AppCompatActivity(), CameraBridgeViewBase.CvCameraViewListener2 {
     // matrix to store current camera output
@@ -75,6 +76,8 @@ class OpenCVActivity : AppCompatActivity(), CameraBridgeViewBase.CvCameraViewLis
         faceDetector = FaceDetector()
         faceDetector.initialize(this, imageBuffer, facesBuffer)
 
+        //rects = FaceDetector().faces!!.toArray()
+
         faceProcessing = FaceProcessing()
         faceProcessing.initialize()
 
@@ -119,7 +122,12 @@ class OpenCVActivity : AppCompatActivity(), CameraBridgeViewBase.CvCameraViewLis
         faceProcessing.feed(rgbaMat!!)
 
         // draw raw opencv rgba mat in the camera preview
-
+//         = FaceDetector().faces!!.toArray()
+//        rects.forEach {
+            //Imgproc.rectangle(rgbaMat, Point(it.x.toDouble(), it.y.toDouble()),
+              //      Point((it.x + it.width).toDouble(), (it.y + it.height).toDouble()), Scalar(255.0, 0.0, 0.0, 255.0), 3)
+        //}
+        //Imgproc.rectangle(rgbaMat, Point(24.0, 22.0), Point(15.0,15.0), Scalar(255.0, 0.0, 0.0, 255.0), 3)
         return rgbaMat
         //return faceProcessing.rgbaResizedMat()
     }
@@ -129,7 +137,7 @@ class OpenCVActivity : AppCompatActivity(), CameraBridgeViewBase.CvCameraViewLis
         runOnUiThread {
             stateViewForFrameRate.text = "Frame rate: " + faceProcessing.frameRate()
             if (facesDetected) {
-                val state = age?.label.toString() + "\nGender: " + gender.label
+                val state = "Age: " + age?.label.toString() + "\nGender: " + gender.label
 
                 val distanceState =  "Distance (m): ${when (distance) {
                     in 1..2 -> "Very close"

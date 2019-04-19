@@ -61,7 +61,6 @@ class FaceProcessing: IFaceProcessing {
         // TODO
         // rotate input rgbaMat and store result to rgbaRotatedMat
         Core.rotate(rgbaMat, rgbaRotatedMat, Core.ROTATE_90_CLOCKWISE);
-
     }
 
     override fun resize() {
@@ -72,7 +71,7 @@ class FaceProcessing: IFaceProcessing {
 
         // TODO
         // reduce input rgbaRotatedMat and store result to rgbaResizedMat
-        var sizeTmp = Size((rgbaMat!!.height() / 2).toDouble(), (rgbaMat!!.height() / 2).toDouble())
+        var sizeTmp = Size((rgbaMat!!.height() / 1.5).toDouble(), (rgbaMat!!.height() / 1.5).toDouble())
         Imgproc.resize(rgbaRotatedMat, rgbaResizedMat, sizeTmp)
         //rgbaResizedMat = rgbaRotatedMat
     }

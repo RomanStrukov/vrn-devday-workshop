@@ -43,6 +43,7 @@ class AgeGenderDetector: IAgeGenderDetector {
 
         // TODO
         // feed input to tensor
+        //ageInferenceInterface.feed(inputName, floatValues, inputSize);
 
         endTrace()
 
@@ -51,6 +52,7 @@ class AgeGenderDetector: IAgeGenderDetector {
         executeWithTimeLog {
             // TODO
             // run tensor network
+            //ageInferenceInterface.run(outputNames);
         }
 
         endTrace()
@@ -59,7 +61,7 @@ class AgeGenderDetector: IAgeGenderDetector {
 
         // TODO
         // get results from tensor
-
+        //ageInferenceInterface.fetch(outputName, outputs)
         endTrace()
 
 

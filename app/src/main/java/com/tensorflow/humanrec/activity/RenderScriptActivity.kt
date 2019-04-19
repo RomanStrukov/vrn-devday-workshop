@@ -79,7 +79,7 @@ class RenderScriptActivity : AppCompatActivity() {
         faceProcessingRenderScript.addProcessingSteps(arrayListOf(
                 { faceDetector.detectFaces() },
                 { facesDetected = faceDetector.processFaces() },
-                { age = ageGenderDetector.fetchAge(facesBuffer) },
+                { /*age = ageGenderDetector.fetchAge(facesBuffer)*/ },
                 { gender = ageGenderDetector.fetchGender(facesBuffer) },
                 { runOnUiThread { distanceToFace = faceDetector.detectDistance() } },
                 { logResults() },

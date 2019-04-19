@@ -71,7 +71,7 @@ class FaceProcessing: IFaceProcessing {
 
         // TODO
         // reduce input rgbaRotatedMat and store result to rgbaResizedMat
-        var sizeTmp = Size((rgbaMat!!.height() / 1.5).toDouble(), (rgbaMat!!.height() / 1.5).toDouble())
+        var sizeTmp = Size((rgbaMat!!.height() / 1.2).toDouble(), (rgbaMat!!.height() / 1.2).toDouble())
         Imgproc.resize(rgbaRotatedMat, rgbaResizedMat, sizeTmp)
         //rgbaResizedMat = rgbaRotatedMat
     }

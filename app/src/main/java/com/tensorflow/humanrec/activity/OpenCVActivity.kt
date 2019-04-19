@@ -86,7 +86,7 @@ class OpenCVActivity : AppCompatActivity(), CameraBridgeViewBase.CvCameraViewLis
         faceProcessing.addProcessingSteps(arrayListOf(
                 { detectFaces() },
                 { facesDetected = faceDetector.processFaces() },
-                { age = ageGenderDetector.fetchAge(facesBuffer) },
+                { age = ageGenderDetector.fetchAge(rgbaMat) },
                 { gender = ageGenderDetector.fetchGender(facesBuffer) },
                 { runOnUiThread { distance = faceDetector.detectDistance() } },
                 { logResults() },

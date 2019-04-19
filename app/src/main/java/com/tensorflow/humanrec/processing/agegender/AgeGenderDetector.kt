@@ -12,6 +12,10 @@ import com.tensorflow.humanrec.utility.executeWithTimeLog
 import com.tensorflow.humanrec.utility.logEnabled
 import com.tensorflow.humanrec.utility.trace
 import org.tensorflow.contrib.android.TensorFlowInferenceInterface
+import org.opencv.core.*
+import org.opencv.core.CvType.channels
+
+
 
 class AgeGenderDetector: IAgeGenderDetector {
     // tensor interfaces to run ml code
@@ -28,7 +32,7 @@ class AgeGenderDetector: IAgeGenderDetector {
         genderInferenceInterface = TensorFlowInferenceInterface(context.assets, "frozen_model_gender.pb")
     }
 
-    override fun fetchAge(floatValues: FloatArray): Age {
+    override fun fetchAge(rgbaMat: Mat?): Age {
         val inputName = "inputs"
         val inputSize = TENSOR_INPUT_SIZE.toLong()
         val outputName = "softmax_output:0"
@@ -38,12 +42,14 @@ class AgeGenderDetector: IAgeGenderDetector {
         if (logEnabled) {
             Trace.beginSection("feed")
         }
-
+        val floatValuesTmp = floatArrayOf(1.2f, 0.6f, 1F, 4.8f, 3.3f, 1.6f, 0.4f, 2.3f, 0.3f)
         "feed".trace()
 
         // TODO
         // feed input to tensor
-        //ageInferenceInterface.feed(inputName, floatValues, inputSize);
+        //val buff = IntArray(rgbaMat!!.total().toInt() * rgbaMat.channels())
+        //rgbaMat.get(0, 0, buff)
+        //ageInferenceInterface.feed(inputName, buff, inputSize);
 
         endTrace()
 
@@ -61,7 +67,7 @@ class AgeGenderDetector: IAgeGenderDetector {
 
         // TODO
         // get results from tensor
-        //ageInferenceInterface.fetch(outputName, outputs)
+       // ageInferenceInterface.fetch(outputName, outputs)
         endTrace()
 
 
